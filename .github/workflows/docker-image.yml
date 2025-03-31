@@ -26,9 +26,11 @@ jobs:
     - name: Build Docker Image
       run: |
         docker buildx build -t dedwison/docker-graphql:0.0.2 .
+        docker buildx build -t dedwison/docker-graphql:latest .
     - name: Push Docker Image
       run: |
         docker push dedwison/docker-graphql:0.0.2
+        docker push dedwison/docker-graphql:latest
 
         
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
